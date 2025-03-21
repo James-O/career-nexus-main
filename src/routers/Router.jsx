@@ -13,15 +13,34 @@ const Router = () => {
         <Routes>
             <Route path='/' element={<Navigate/>}>
                 <Route index element={<Signup/>}/>
-                <Route path='login' element={<Login/>}/>
+                <Route path='/login' element={<Login/>}/>
             </Route>
-            <Route path='/dashboard' element={<MainNavbar/>}>
-                <Route index element={<Home/>}/>
-                <Route path='profilepage' element={<ProfilePage/>}/>
+            <Route path='/' element={<MainNavbar/>}>
+                <Route path='/home' element={<Home/>}/>
+                <Route path='/profilepage' element={<ProfilePage/>}/>
             </Route>
             <Route path='*' element={<ErrorPage/>}/>
         </Routes>
     </BrowserRouter>
+    // <BrowserRouter>
+    //   <Routes>
+    //     {/* Redirect from '/' to '/signup' */}
+    //     <Route path="/" element={<Navigate to="/signup" replace />} />
+
+    //     {/* Auth Routes */}
+    //     <Route path="/signup" element={<Signup />} />
+    //     <Route path="/login" element={<Login />} />
+
+    //     {/* Protected Routes */}
+    //     <Route path="/dashboard" element={<MainNavbar />}>
+    //       <Route index element={<Home />} />
+    //       <Route path="profilepage" element={<ProfilePage />} />
+    //     </Route>
+
+    //     {/* Catch-All Error Page */}
+    //     <Route path="*" element={<ErrorPage />} />
+    //   </Routes>
+    // </BrowserRouter>
   )
 }
 
