@@ -10,18 +10,18 @@ import ErrorPage from '../components/ErrorPage'
 const Router = () => {
   return (
     <BrowserRouter>
-        <Routes>
-            <Route path='/' element={<Navigate/>}>
-                <Route index element={<Signup/>}/>
-                <Route path='/login' element={<Login/>}/>
-            </Route>
-            <Route element={<MainNavbar/>}>
-                <Route path='/home' element={<Home/>}/>
-                <Route path='/profilepage' element={<ProfilePage/>}/>
-            </Route>
-            <Route path='*' element={<ErrorPage/>}/>
-        </Routes>
-    </BrowserRouter>
+    <Routes>
+        <Route path='/' element={<Navigate />}>
+            <Route index element={<Signup />} />
+            <Route path='login' element={<Login />} /> {/* Removed leading slash */}
+        </Route>
+        <Route element={<MainNavbar />}>
+            <Route path='home' element={<Home />} /> {/* Removed leading slash */}
+            <Route path='profilepage' element={<ProfilePage />} /> {/* Removed leading slash */}
+        </Route>
+        <Route path='*' element={<ErrorPage />} />
+    </Routes>
+</BrowserRouter>
     // <BrowserRouter>
     //   <Routes>
     //     {/* Redirect from '/' to '/signup' */}
